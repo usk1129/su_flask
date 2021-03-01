@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="sv" >
+    <head>
+        <meta charset="UTF-8">
+        <title>L&auml;gga ut driftinformation f&ouml;r Stockholms universitet</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="{{url_for('static', filename='driftinfo.js') }}">\x3C/script>')</script>
+        
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script>window.JavaScript || document.write('<script src="{{url_for('static', filename='driftinfo.js') }}">\x3C/$>\x3C/script>')</script>
+
+        <!-- Form validation -->
+        <script src="/home/usko/flask/venv/app/static/driftinfo.js" charset="utf-8"></script>
+
+    </head>
+    <body>
+        <div class="container">
+            <img src="{{url_for('static', filename='su-blog.jpg')}}" width="940" height="198" alt="SU Logo" />
+            <H2>L&auml;gga ut driftinformation f&ouml;r SU</h2>
+            <div>
+                H&auml;r l&auml;gger du ut driftinformation f&ouml;r alla kanaler<br/>
+                F&ouml;r mer information om driftinformation se <a href="https://confluence.it.su.se/confluence/x/iYB5Ag" target="_blank">Confluence</a><br/>
+                F&ouml;r standrardtexter se <a href="https://confluence.it.su.se/confluence/x/AwTZAg" target="_blank">Standardtexter</a> 
+                <ul>
+                    <li>
+                        <a href="http://driftinfo.it.su.se" target="_blank">www.driftinfo.it.su.se</a>
+                    </li>
+                    <li>
+                        <div><a href="http://www.su.se" target="_blank">www.su.se</a>
+                        L&auml;ggs p&aring; flera st&auml;llen beroende p&aring; kategorier f&ouml;r mer info se 
+                        <a href="https://confluence.it.su.se/confluence/x/iYB5Ag" target="_blank">Confluence</a></div>
+                    </li>
+                    <li>
+                        E-post till listan driftinfo@su.se
+                    </li>
+                </ul>
+                <form method="POST" action="/submit" autocomplete="on" form="usrform" onsubmit="return validateForm()" >
+                    <label for="rubrik">Titel (max 80 tecken)</label><br/>
+                    <input type="text" name="rubrik" maxlength="80" size="80" id="rubrik"><br/>
+                    <label for="long">Driftinformation för mejl och Wordpress (max 3000 tecken)</label><br/>
+                    <textarea name="long"  rows="20" cols="80" maxlength="3000" id="long"></textarea><br/>
+                    <label for="short">Driftinformation för Twitter och SMS (max 280 tecken)</label><br/>
+                    <textarea name="short" rows="4" cols="80" maxlength="280" id="short"></textarea><br/>
+                    Driftstörning:<input  type="checkbox" name="disturbance"><br/>
+                    Användarnamn: <input type="text" name="username" id="username" maxlength="100"><br/><br/>
+                    <input type="submit" value="Skicka driftinfo"><br/>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
+
